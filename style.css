@@ -1,0 +1,61 @@
+/* Background */
+body {
+    background: #eef2f7;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background: #212529 !important;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 15px;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card h5 {
+    color: gray;
+}
+
+.card h3 {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+/* Table */
+table {
+    background: white;
+}
+
+table th {
+    width: 35%;
+}
+
+/* Buttons */
+.btn {
+    margin: 5px;
+    border-radius: 10px;
+}
+
+/* Description */
+.text-muted {
+    font-size: 17px;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+}
