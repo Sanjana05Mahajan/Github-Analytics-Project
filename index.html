@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card shadow p-4 mx-auto" style="max-width: 650px;">
+    <h2 class="text-center mb-3">GitHub Repository Analytics</h2>
+
+    <p class="text-center text-muted">
+        Search a public GitHub repository to analyze its metrics.
+    </p>
+
+    <form action="/search" method="POST">
+        <div class="mb-3">
+            <label for="owner" class="form-label">Repository Owner</label>
+            <input
+                id="owner"
+                type="text"
+                name="owner"
+                class="form-control"
+                placeholder="python"
+                required>
+        </div>
+
+        <div class="mb-3">
+            <label for="repo" class="form-label">Repository Name</label>
+            <input
+                id="repo"
+                type="text"
+                name="repo"
+                class="form-control"
+                placeholder="cpython"
+                required>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">
+            Search Repository
+        </button>
+    </form>
+</div>
+
+{% endblock %}

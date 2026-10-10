@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if error %}
+
+<div class="alert alert-danger text-center">
+    <h4>{{ error }}</h4>
+
+    <a href="/" class="btn btn-primary mt-3">
+        Search Again
+    </a>
+</div>
+
+{% else %}
+
+<div class="container">
+
+    <div class="card shadow-lg p-4">
+
+        <div class="text-center">
+
+            <img src="{{ avatar }}"
+                 class="rounded-circle mb-3"
+                 width="120"
+                 height="120">
+
+            <h2>{{ repo.full_name }}</h2>
+
+            <h5 class="text-muted">{{ owner }}</h5>
+
+        <p> {{ description }}</p>
+    
+        <hr>
+
+        <div class="row">
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow">
+            <div class="card-body">
+                <h5>⭐ Stars</h5>
+                <h2>{{ repo.stargazers_count }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow">
+            <div class="card-body">
+                <h5>🍴 Forks</h5>
+                <h2>{{ repo.forks_count }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow">
+            <div class="card-body">
+                <h5>🐞 Issues</h5>
+                <h2>{{ repo.open_issues_count }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow">
+            <div class="card-body">
+                <h5>👀 Watchers</h5>
+                <h2>{{ watchers }}</h2>
+            </div>
+        </div>
+    </div>
+
+</div>
+        <hr>
+
+        <table class="table table-bordered table-striped mt-4">
+
+    <tr>
+        <th>Owner</th>
+        <td>{{ owner }}</td>
+    </tr>
+
+    <tr>
+        <th>Language</th>
+        <td>{{ language }}</td>
+    </tr>
+
+    <tr>
+        <th>License</th>
+        <td>{{ license_name }}</td>
+    </tr>
+
+    <tr>
+        <th>Visibility</th>
+        <td>{{ visibility }}</td>
+    </tr>
+
+    <tr>
+        <th>Repository Size</th>
+        <td>{{ size }} KB</td>
+    </tr>
+
+    <tr>
+        <th>Default Branch</th>
+        <td>{{ default_branch }}</td>
+    </tr>
+
+    <tr>
+        <th>Created</th>
+        <td>{{ created }}</td>
+    </tr>
+
+    <tr>
+        <th>Updated</th>
+        <td>{{ updated }}</td>
+    </tr>
+
+</table>
+
+        <div class="text-center">
+
+            <a href="{{ repo.html_url }}"
+               target="_blank"
+               class="btn btn-dark">
+
+                Open Repository
+
+            </a>
+
+            <a href="/"
+               class="btn btn-success">
+
+                Search Again
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

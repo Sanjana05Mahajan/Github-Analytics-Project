@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card shadow p-4">
+
+<h2 class="text-center mb-4">
+
+Repository Comparison
+
+</h2>
+
+<form action="/compare" method="POST">
+
+<div class="row">
+
+<div class="col-md-6">
+
+<h4>Repository 1</h4>
+
+<div class="mb-3">
+
+<label>Owner</label>
+
+<input
+type="text"
+name="owner1"
+class="form-control"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Repository</label>
+
+<input
+type="text"
+name="repo1"
+class="form-control"
+required>
+
+</div>
+
+</div>
+
+<div class="col-md-6">
+
+<h4>Repository 2</h4>
+
+<div class="mb-3">
+
+<label>Owner</label>
+
+<input
+type="text"
+name="owner2"
+class="form-control"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Repository</label>
+
+<input
+type="text"
+name="repo2"
+class="form-control"
+required>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="text-center">
+
+<button
+class="btn btn-primary">
+
+Compare
+
+</button>
+
+</div>
+
+</form>
+
+{% if repo1 and repo2 %}
+
+<hr>
+
+<h3 class="text-center">
+
+Comparison Result
+
+</h3>
+
+<table class="table table-bordered">
+
+<thead>
+
+<tr>
+
+<th>Feature</th>
+
+<th>{{ repo1.name }}</th>
+
+<th>{{ repo2.name }}</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>⭐ Stars</td>
+
+<td>{{ repo1.stargazers_count }}</td>
+
+<td>{{ repo2.stargazers_count }}</td>
+
+</tr>
+
+<tr>
+
+<td>🍴 Forks</td>
+
+<td>{{ repo1.forks_count }}</td>
+
+<td>{{ repo2.forks_count }}</td>
+
+</tr>
+
+<tr>
+
+<td>🐞 Issues</td>
+
+<td>{{ repo1.open_issues_count }}</td>
+
+<td>{{ repo2.open_issues_count }}</td>
+
+</tr>
+
+<tr>
+
+<td>💻 Language</td>
+
+<td>{{ repo1.language }}</td>
+
+<td>{{ repo2.language }}</td>
+
+</tr>
+
+<tr>
+
+<td>👀 Watchers</td>
+
+<td>{{ repo1.watchers_count }}</td>
+
+<td>{{ repo2.watchers_count }}</td>
+
+</tr>
+
+<tr>
+
+<td>❤️ Health Score</td>
+
+<td>{{ score1 }}</td>
+
+<td>{{ score2 }}</td>
+
+</tr>
+
+<tr>
+
+<td>📈 Status</td>
+
+<td>{{ status1 }}</td>
+
+<td>{{ status2 }}</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+{% endif %}
+
+</div>
+
+{% endblock %}
