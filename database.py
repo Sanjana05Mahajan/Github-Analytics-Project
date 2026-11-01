@@ -15,7 +15,8 @@ def get_connection():
     if DB_HOST not in ("localhost", "127.0.0.1"):
         connection_config["ssl_ca"] = DB_SSL_CA
         connection_config["ssl_verify_cert"] = True
-
+        
+    print(f"Connecting to MySQL on port: {connection_config['port']}") 
     return mysql.connector.connect(**connection_config)
 
 
