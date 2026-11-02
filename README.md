@@ -1,11 +1,5 @@
 # GitHub Repository Analytics Dashboard
 
-## Live Demo
-
-**Try the application here:** [GitHub Repository Analytics Dashboard](https://github-analytics-project.onrender.com)
-
-The application allows users to search GitHub repositories, analyse repository metrics, calculate repository health scores, compare repositories, and maintain search history.
-
 ## Project Overview
 The GitHub Repository Analytics Dashboard is a Python Flask web application that retrieves public GitHub repository information using the GitHub REST API. It displays repository statistics, calculates a custom health score, stores search history in MySQL, and compares repositories.
 
